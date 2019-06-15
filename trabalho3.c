@@ -80,6 +80,10 @@ int resolveJosephus(int n, int m)
     return matador->posicao;
 
 }
+/*
+@brief - remover o elemento p→prox, ou seja, o elemento imediatamente depois de p.
+param   {Pessoa *p} "Pessoa" imediatamente antes da que vai ser removida
+ */
 void removeLista(Pessoa *p)
 {
     Pessoa *aux;
@@ -90,7 +94,11 @@ void removeLista(Pessoa *p)
     free(aux);
 }
 
-
+/*
+@brief - x é o elemento a ser inserido. O elemento é inserido no final da lista circular, onde o último elemento da lista deve
+sempre aponta para o primeiro elemento dela.
+@param {x}  conteudo que será inserido na estrutura
+ */
 void insereLista(int x)
 {
     Pessoa *newnode = (Pessoa *)malloc(sizeof(Pessoa));
@@ -105,7 +113,10 @@ void insereLista(int x)
     newnode->prox = inicio;
     fim = fim->prox;
 }
-
+/*
+imprimir todos os elementos
+presentes na lista naquele momento, começando por aquele apontado por inicio.
+ */
 int imprimeLista()
 {
     Pessoa *aux = inicio;
